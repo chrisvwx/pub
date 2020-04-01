@@ -4,7 +4,7 @@ A plot of deaths due to COVID-19 in Santa Clara County, for the San
 Francisco Bay area, and in California is shown below. The data for
 Santa Clara County is taken from the
 [county public health department](https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/dashboard.aspx)
-while the data for the nine counties in the SF Bay area and for California are taken from
+while the data for the other eight counties in the SF Bay area and for California are taken from
 the NY Times [github repo](https://github.com/nytimes/covid-19-data)
 of COVID-19 data. 
 
