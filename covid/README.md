@@ -1,10 +1,10 @@
-# COVID-19 deaths in Santa Clara County, SF Bay Area, and California
+# COVID-19 deaths in Santa Clara County, California, and NY State
 
-A plot of deaths due to COVID-19 in Santa Clara County, for the San
-Francisco Bay area, and in California is shown below. The data for
+A plot of deaths due to COVID-19 in Santa Clara County, California,
+and New York State is shown below. The data for
 Santa Clara County is taken from the
 [county public health department](https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/dashboard.aspx)
-while the data for the other eight counties in the SF Bay area and for California are taken from
+while the data for California and New York are taken from
 the NY Times [github repo](https://github.com/nytimes/covid-19-data)
 of COVID-19 data. 
 
@@ -12,10 +12,11 @@ of COVID-19 data.
 
 The most hopeful sign to me is that the slope of the death curve for
 the past few days for the county is not as steep as it was previously,
-and is less steep than for the Bay Area or California. The Santa Clara
-Public Health department was a leader by [reccommending on March 5](https://www.sccgov.org/sites/phd/news/Pages/new-guidance-new-covid-19-3-5-2020.aspx) that
-employers suspend non-essential travel and obey social distancing,
-on March 13
+and is less steep than for California or New York. The Santa Clara
+Public Health department was a leader by
+[reccommending on March 5](https://www.sccgov.org/sites/phd/news/Pages/new-guidance-new-covid-19-3-5-2020.aspx)
+that employers suspend non-essential travel and obey social
+distancing, on March 13
 [prohibiting](https://www.sccgov.org/sites/phd/news/Pages/press-release-03-13-20.aspx)
 gatherings of more than 100 people, and finally on March 16 leading
 the effort in which all Bay area counties announced a
@@ -25,6 +26,5 @@ in effect several days later
 [March 19](https://www.cdph.ca.gov/Programs/CID/DCDC/CDPH%20Document%20Library/COVID-19/Health%20Order%203.19.2020.pdf). My
 interpretation of the shape of the curves is that Santa Clara County's
 actions are having the desired effect, and we are seeing less deaths
-as a result. I hope that my interpretation is correct and that the 
-data for the rest of the Bay area, California, and the
-country follow suit.
+as a result. I hope that my interpretation is correct and that the
+data for the rest of California, and the country follow suit.
