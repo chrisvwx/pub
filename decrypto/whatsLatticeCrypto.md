@@ -29,9 +29,9 @@ $$B_{green} = \left[ \begin{array}{rr}
                       -1  &  2   
                  \end{array}\right] \\;. $$
 
-Lattice reduction looked pretty easy for the green and red bases above; what makes a basis hard for a powerful computer to do lattice reduction on? One thing is using much higher dimensional bases than the two-dimensional examples shown so far, say one hundred dimensions or more; another thing that makes a basis hard to reduce is using basis elements of much higher bit depth, for example sixty-four bits or more.  The basis matrix below has more dimensions (four) than our previous examples, and also has elements of much higher bit depth than previous.  Even though this matrix is not at all easy for a human to visualize in the same way as the two-dimensional problem in the figure above, it easy for a not-so-powerful computer to reduce. For problems that are hard (hopefully impossible!) for a powerful classic or quantum computer to reduce the number of dimensions must be increased; see [latticechallenge.org/](https://www.latticechallenge.org/) for examples of harder problems.
+Lattice reduction looked pretty easy for the green and red bases above; what makes a basis hard for a powerful computer to do lattice reduction on? One thing is using much higher dimensional bases than the two-dimensional examples shown so far, say one hundred dimensions or more; another thing that makes a basis hard to reduce is using basis elements of much higher bit depth, for example sixty-four bits or more.  The basis matrix $B_{4D}$ below has more dimensions (four) than our previous examples, and also has elements of much higher bit depth than previous.  Even though the lattice that this matrix represents is not at all easy for a human to visualize in the same way as the two-dimensional lattice in the figure above, it easy for a not-so-powerful computer to reduce. For problems that are hard (hopefully impossible!) for a powerful classic or quantum computer to reduce the number of dimensions must be increased; see [latticechallenge.org/](https://www.latticechallenge.org/) for examples of harder problems.
 
-$$B = \left[ \begin{array}{rrrr}
+$$B_{4D} = \left[ \begin{array}{rrrr}
        6714169179285760250 & 3904382587709331766 & 1484928972011185279 &  158973427218251831 \\
         222240594969818910 & 1865961114972015885 & 6291396082712905859 & 9157617360419036595 \\
         878128680551912807 & 3247508428419359782 & 6192395433663333636 & 4340458729683974548 \\
@@ -40,27 +40,11 @@ $$B = \left[ \begin{array}{rrrr}
 
 As well as being used for post-quantum cryptosystems, lattice cryptography provides the only known constructions for fully homomorphic encryption, and functional encryption.  These are certainly decentralizing technologies in the sense of separating encryption and computation, while preserving privacy. These applications of lattice cryptography are not nearly as developed and widely accepted as (for example) [Kyber](https://en.wikipedia.org/wiki/Kyber) protocol for post-quantum public-key encryption. 
 
-Further reading
+*The title above is "What is Lattice Cryptography?" Unfortunately we have not given a complete answer to this answer, rather the most basic of foundations. For a more complete answer to the question, see the further reading below:*
 * "[A Decade of Lattice Cryptography](https://eprint.iacr.org/2015/939)" by Chris Peikert is a mathematical introduction to the SIS and LWE problems, which are at the core of lattice cryptography.
-* [fplll](https://github.com/fplll/fplll) is a C++ library implementing several powerful lattice algorithms written by academic cryptanalysts. 
 * For material that is somewhat introductory, see the videos from "[Lattices: Algorithms, Complexity, and Cryptography Boot Camp](https://www.youtube.com/playlist?list=PLgKuh-lKre10rqiTYqJi6P4UlBRMQtPn0)" from the Simons Institute.
+* [fplll](https://github.com/fplll/fplll) is a powerful C++ library implementing several powerful lattice algorithms written by academic cryptanalysts. Results from this library are used to estimate the power of future powerful computers and hence to decide what paramters (such as the bit depth and lattice dimension) of cryptosystems so as to allow them to be secure for many years to come.
 
 <!---
 Blockchains that use lattice cryptography or any of the fancy tools listed above do not yet (in early 2023) appear to be an active area of research for academic cryptographers.
 --->
-
-
-<!---
- A mathematician would say a lattice is a full-rank discrete additive subgroup of (say) $\mathbb{R}^n$.  A (slightly) less mathematical definition says that given a basis matrix $B$, and a vector of integers $\mathbf{z}$, the set of points $\mathbf{y}$ reachable by $\mathbf{y} = B \mathbf{z}$ is a lattice: $\mathcal{L}(B) = \left\\{ B \mathbf{z}:\mathbf{z} \in \mathbb{Z}^n \right\\} $.   Given the matrix $B_{green}$ below, the purple points in the figure below illustrate the lattice $\mathcal{L}(B_{green})$; the columns of the matrix are illustrated with green arrows.
- 
- To better understand what is going on, look at the purple point at $y[1]=2$, $y[2]=1$. What integer combination of the columns of  $B_{red}$ result in this point?  In fact, this point is the result of subtracting the second column from the first column. Or in 
-
-$$\mathbf{y} = \left[ \begin{array}{l}
-                      2 \\
-                      1    
-                 \end{array}\right]
-= B_{red}\mathbf{x},\\;\\;\\;\mbox{where}\\;\\;\\;  x= \left[ \begin{array}{l}
-                      1 \\
-                      -1    
-                 \end{array}\right] $$
- --->
