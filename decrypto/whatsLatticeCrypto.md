@@ -2,19 +2,9 @@
 
 Cryptography is based on problems that are hard to solve in general, but easy to solve with additional information. One such problem is the difficulty of factoring the product of two large prime numbers. In this case the additional information is one of the prime numbers. For the large numbers used in cryptography today, someone who does not have either of the prime factors can not find them, even with very powerful computers. Systems such as [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) which are based on prime factorization are considered secure, though [attacks](https://link.springer.com/content/pdf/10.1007/3-540-68697-5_11.pdf) using lattice reduction have been found when library designers or users do [something stupid](https://link.springer.com/content/pdf/10.1007/3-540-68697-5_11.pdf) and reveal too much information.
 
-<!---
-Prime-based crypto
-- Successful for classic computers
-- BAsis of all cryptography today
-- Quantum attacks 
-  - Amazing
-  - Still not obvious if or when they will succeed
-- best attacks with classic computers often use lattice tools
---->
-
 Another early [cryptosystem](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem) was based on the [subset-sum](https://en.wikipedia.org/wiki/Knapsack_problem) (or knapsack) problem which was believed to be hard to solve unless one has side information (a permutation that makes the subset superincreasing). Unfortunately attacks were quickly found, including one using [lattice reduction](https://dl.acm.org/doi/10.1145/2455.2461); these attacks make this system insecure.
 
-Even though cryptography based on the hardness of finding prime factors is secure against current powerful computers, in 1994 it was found that if a powerful quantum computer could be built, it could [easily find](https://en.wikipedia.org/wiki/Shor's_algorithm) these factors and also break cryptography based on [elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography). After this quantum attack was found, a search began for problems that are hard even for quantum computers. Some researchers looked for lattices which are  [hard](https://en.wikipedia.org/wiki/Lattice_problem) to do lattice reduction on in both classic and quantum computers. These efforts resulted in a [lattice-based standard](https://en.wikipedia.org/wiki/Kyber) being chosen in the [final round](https://en.wikipedia.org/wiki/NIST_Post-Quantum_Cryptography_Standardization#Selected_Algorithms_2022) of NIST's search for a cryptographic standard that is believed to be secure against attack from attack from future powerful quantum (and classic) computers. 
+Even though cryptography based on the hardness of finding prime factors is secure against current powerful computers, in 1994 it was found that if a powerful quantum computer could be built, it could [easily find](https://en.wikipedia.org/wiki/Shor's_algorithm) these factors and also break cryptography based on [elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography). After this quantum attack was found, a search began for problems that are hard even for quantum computers. Some researchers looked for lattices on which it is [hard](https://en.wikipedia.org/wiki/Lattice_problem) to do lattice reduction in both classic and quantum computers. These efforts resulted in a [lattice-based standard](https://en.wikipedia.org/wiki/Kyber) being chosen in the [final round](https://en.wikipedia.org/wiki/NIST_Post-Quantum_Cryptography_Standardization#Selected_Algorithms_2022) of NIST's search for a cryptographic standard that is believed to be secure against attack from attack from future powerful quantum (and classic) computers. 
 
 <img src="basis.png" alt="figure showing a lattice in purple, one basis in green, and another in red" width="400"/>
 
@@ -40,10 +30,10 @@ $$B_{4D} = \left[ \begin{array}{rrrr}
 
 As well as being used for post-quantum cryptosystems, lattice cryptography provides the only known constructions for fully homomorphic encryption, and functional encryption.  These are certainly decentralizing technologies in the sense of separating encryption and computation, while preserving privacy. These applications of lattice cryptography are not nearly as developed and widely accepted as (for example) [Kyber](https://en.wikipedia.org/wiki/Kyber) protocol for post-quantum public-key encryption. 
 
-*The title above is "What is Lattice Cryptography?" Unfortunately we have not given a complete answer to this answer, rather the most basic of foundations. For a more complete answer to the question, see the further reading below:*
-* "[A Decade of Lattice Cryptography](https://eprint.iacr.org/2015/939)" by Chris Peikert is a mathematical introduction to the SIS and LWE problems, which are at the core of lattice cryptography.
-* For material that is somewhat introductory, see the videos from "[Lattices: Algorithms, Complexity, and Cryptography Boot Camp](https://www.youtube.com/playlist?list=PLgKuh-lKre10rqiTYqJi6P4UlBRMQtPn0)" from the Simons Institute.
-* [fplll](https://github.com/fplll/fplll) is a powerful C++ library implementing several powerful lattice algorithms written by academic cryptanalysts. Results from this library are used to estimate the power of future powerful computers and hence to decide what paramters (such as the bit depth and lattice dimension) of cryptosystems so as to allow them to be secure for many years to come.
+*The title above is "What is Lattice Cryptography?" Unfortunately we have barely scratched the surface of a complete answer. For more, see the further reading below:*
+* "[A Decade of Lattice Cryptography](https://eprint.iacr.org/2015/939)" by Chris Peikert is a mathematical intro to the SIS and LWE problems, which are at the core of lattice cryptography.
+* For material that is somewhat introductory, see the [videos ](https://www.youtube.com/playlist?list=PLgKuh-lKre10rqiTYqJi6P4UlBRMQtPn0) from the "[Lattices: Algorithms, Complexity, and Cryptography Boot Camp](https://simons.berkeley.edu/workshops/lattices-algorithms-complexity-cryptography-boot-camp/schedule#simons-tabs)" from the Simons Institute.
+* [fplll](https://github.com/fplll/fplll) is a powerful C++ library implementing lattice algorithms and aimed at cryptanalysis. Results from this library are used to estimate the power of future powerful computers and hence to decide what paramters (such as the bit depth and lattice dimension) of cryptosystems so as to allow them to be secure for many years to come.
 
 <!---
 Blockchains that use lattice cryptography or any of the fancy tools listed above do not yet (in early 2023) appear to be an active area of research for academic cryptographers.
