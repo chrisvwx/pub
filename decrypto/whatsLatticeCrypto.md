@@ -19,6 +19,8 @@ $$B_{green} = \left[ \begin{array}{rr}
                       -1  &  2   
                  \end{array}\right] \\;. $$
 
+Each column of these matrices is represented by an arrow in the figure.  In fact, each column of $B_{red}$ can be represented by an integer combination of the columns of $B_{green}$, and vice-versa. If you'd like an exercise, find a matrix $T$ such that $B_{red} =B_{green} T$; this matrix $T$ is a [unimodular matrix](https://en.wikipedia.org/wiki/Unimodular_matrix).
+
 Lattice reduction looked pretty easy for the green and red bases above; what makes a basis hard for a powerful computer to do lattice reduction on? One thing is using much higher dimensional bases than the two-dimensional examples shown so far, say one hundred dimensions or more; another thing that makes a basis hard to reduce is using basis elements of much higher bit depth, for example sixty-four bits or more.  The basis matrix $B_{4D}$ below has more dimensions (four) than our previous examples, and also has elements of much higher bit depth than previous.  Even though the lattice that this matrix represents is not at all easy for a human to visualize in the same way as the two-dimensional lattice in the figure above, it easy for a not-so-powerful computer to reduce. For problems that are hard (hopefully impossible!) for a powerful classic or quantum computer to reduce, the number of dimensions must be increased; see [latticechallenge.org/](https://www.latticechallenge.org/) for examples of harder problems.
 
 $$B_{4D} = \left[ \begin{array}{rrrr}
