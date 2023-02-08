@@ -36,7 +36,7 @@ Despite the significant step of a lattice-based standard  for public-key encrypt
 
 The title above is "What is Lattice Cryptography?" For a more complete answer to this question see the further reading below:
 * "[A Decade of Lattice Cryptography](https://eprint.iacr.org/2015/939)" by Chris Peikert is a mathematical intro to the [SIS](https://en.wikipedia.org/wiki/Short_integer_solution_problem) and [LWE](https://en.wikipedia.org/wiki/Learning_with_errors) problems, which are at the core of lattice cryptography.
-* For material that is somewhat introductory, see the [videos ](https://www.youtube.com/playlist?list=PLgKuh-lKre10rqiTYqJi6P4UlBRMQtPn0) from the "[Lattices: Algorithms, Complexity, and Cryptography Boot Camp](https://simons.berkeley.edu/workshops/lattices-algorithms-complexity-cryptography-boot-camp/schedule#simons-tabs)" from the Simons Institute.
+* For introductory material, see the [videos ](https://www.youtube.com/playlist?list=PLgKuh-lKre10rqiTYqJi6P4UlBRMQtPn0) from the "[Lattices: Algorithms, Complexity, and Cryptography Boot Camp](https://simons.berkeley.edu/workshops/lattices-algorithms-complexity-cryptography-boot-camp/schedule#simons-tabs)" from the Simons Institute.
 * [fplll](https://github.com/fplll/fplll) is a powerful C++ library implementing lattice algorithms and aimed at cryptanalysis. Results from this library are used to estimate the power of future powerful computers and hence to decide what paramters (such as the bit depth and lattice dimension) of cryptosystems so as to allow them to be secure for many years to come.
 
 
