@@ -22,3 +22,5 @@ One interesting thing is the number of tax brackets. Originally there were only 
 number of brackets, but in 1918 through 1921 there were 56 income tax brackets.
 
 ![Number of Brackets](numberOfBrackets.png)
+
+All the figures above assume a "Married filing Jointly" status.
