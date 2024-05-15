@@ -139,9 +139,11 @@ function plotYearAnim(year,status)
     plot!(plt,incomes,tax1,linecolor=:blue,
                linewidth=2.5)
     annotate!(plt,4e4, 80, string(year), font(48))
+#    annotate!(plt,4e3, -11,"c.im/@chrisp", font(7))
 end
 incomes = round.(10 .^collect(3.9:.1:7.1));
     
+xtickLabels = (10 .^collect(3:7), ["\$1k" "\$10k" "\$100k" "\$1M" "\$10M"])
 ytickLabels = (collect(0:20:80), ["0%" "20%" "40%" "60%" "80%"])
 anim = Animation()
 for year=1862:2024
@@ -169,7 +171,7 @@ plt = plot(xscale=:log10,legend_position=:topleft,
            legendfont =font(12),
            xtickfont =font(12),
            ytickfont =font(12),
-           ylims=(-.5,90),
+           ylims=(-.3,90),
            xlabel="Incomes in 2024 dollars",
            ylabel="Tax rate");
 incomes = round.(10 .^collect(3.9:.1:7.1));
@@ -178,7 +180,7 @@ plotYear(plt,1904,1)
 plotYear(plt,1944,1)
 plotYear(plt,1984,1)
 plotYear(plt,2024,1)
-
+#annotate!(plt,4e3, -11,"c.im/@chrisp", font(7))
 savefig("fortyYearIncrements.png")
 
 
