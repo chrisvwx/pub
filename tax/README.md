@@ -7,7 +7,8 @@ income tax from the base tax brackets (e.g. without any sort of deductions).
 The first figure shows an animation of US income tax from 1862 to 2024,
 with all incomes converted into 2024 dollars using
 [CPI](https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-)
-data from the Minneapolis Fed. There's lotsa history going on in this graph!
+data from the Minneapolis Fed. The income along the x-axis is shown in log scale. 
+There's lotsa history going on in this graph!
 
 ![Animated tax brackts](animatedBrackets.gif)
 
