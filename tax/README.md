@@ -1,7 +1,10 @@
 # US Income tax plots
 
 Using data from [taxfoundation.org](https://taxfoundation.org/data/all/federal/historical-income-tax-rates-brackets/), 
-here are a few plots of US income taxes. The first figure shows an animation of US income tax from 1862 to 2024,
+here are a few plots of US income taxes. These do not include the full tax treatment as
+[Taxsim](https://www.nber.org/research/data/taxsim) does; the plots below show solely the effective
+income tax from the base tax brackets (e.g. without any sort of deductions).
+The first figure shows an animation of US income tax from 1862 to 2024,
 with all incomes converted into 2024 dollars using
 [CPI](https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-)
 data from the Minneapolis Fed. There's lotsa history going on in this graph!
