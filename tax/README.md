@@ -8,11 +8,12 @@ The first figure shows an animation of US income tax from 1862 to 2024,
 with all incomes converted into 2024 dollars using
 [CPI](https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-)
 data from the Minneapolis Fed. The income along the x-axis is shown in log scale. 
+
 There's lotsa history going on in this graph!
 
 ![Animated tax brackts](animatedBrackets.gif)
 
-Here's a bit more focused figure showing the brackets in 40-year increments from 1864 to 2024.
+In the next figure (below) the tax for a few specific years (40-year increments from 1864 to 2024) is shown.
 We see the low tax in the 1860s, no income tax of 1904, the high wartime tax of 1944, 
 the tax in the middle of the Reagan years (before his final tax cuts), 
 and finally the rates for tax year 2024.
