@@ -179,7 +179,7 @@ plotYear(plt,1944,1)
 plotYear(plt,1984,1)
 plotYear(plt,2024,1)
 
-savefig("fortyYearIncrements.pdf")
+savefig("fortyYearIncrements.png")
 
 
 
@@ -191,4 +191,4 @@ plot(bSizes[:,1],bSizes[:,2],
      titlefont =font(12),
      xlabel="Year",
      title="Number of income tax brackets")
-savefig("numberOfBrackets.pdf")
+savefig("numberOfBrackets.png")
