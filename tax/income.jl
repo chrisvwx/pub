@@ -23,7 +23,7 @@ for rw = 2:Nrows
         bSizes[yx,1] = year
         for ix=0:3
             tmp = rawBrackets[rw,ix*3+2]
-            if ~isempty(tmp)
+            if ~isempty(tmp) && ~(tmp.=="No income tax")
                 bSizes[yx,ix+2] +=1
             end
         end
@@ -53,7 +53,7 @@ for rw = 2:Nrows
         end
         for ix=0:3
             tmp = rawBrackets[rw,ix*3+2]
-            if ~isempty(tmp)
+            if ~isempty(tmp) && bSizes[yx,ix+2]>0
                 mat = thisBracket[ix+1]
                 mat[thisIx,1] = @scanf(rawBrackets[rw,ix*3+2],"%f",Float64)[2]
                 endBracket = replace(rawBrackets[rw,ix*3+4],","=>"")
@@ -65,6 +65,9 @@ for rw = 2:Nrows
 end
 
 function rate(income,bracket)
+    if size(bracket)[1]==0
+        return 0
+    end
     diffb = diff(bracket[:,2])
     diffTx = diffb.* bracket[1:end-1,1]/100
     ix = findfirst(income.<bracket[:,2])
@@ -92,7 +95,7 @@ function inflationCalc(price1,year1,year2,cpi)
     return price1 * cpi[year2]/cpi[year1]
 end
 
-function inflationLevelBrackets(brackets,cpi,targetYear)
+function inflationLevelBrackets!(brackets,cpi,targetYear)
     for year = 1862:2024
         levelCalc(price) = inflationCalc(price,year,targetYear,cpi)
         for i = 1:4
@@ -100,7 +103,7 @@ function inflationLevelBrackets(brackets,cpi,targetYear)
         end
     end
 end
-inflationLevelBrackets(brackets,cpiD,2024)
+inflationLevelBrackets!(brackets,cpiD,2024)
 
 
 year = 2024
@@ -180,7 +183,6 @@ plotYear(plt,1904,1)
 plotYear(plt,1944,1)
 plotYear(plt,1984,1)
 plotYear(plt,2024,1)
-#annotate!(plt,4e3, -11,"c.im/@chrisp", font(7))
 savefig("fortyYearIncrements.png")
 
 
@@ -194,3 +196,35 @@ plot(bSizes[:,1],bSizes[:,2],
      xlabel="Year",
      title="Number of income tax brackets")
 savefig("numberOfBrackets.png")
+
+
+
+
+
+function getRate(year,status,incomes)
+    rate1(income) = rate(income,brackets[year][status])
+    return rate1.(incomes)
+end
+incomes = round.(10 .^collect(3:.1:8));
+Nincomes = length(incomes)
+statusStrs = ["mfj", "mfs", "single", "hoh"]
+
+for status = 1:4
+    io = open(statusStrs[status]*".csv","w")
+    print(io,"Incomes")
+    for i=1:Nincomes
+        thisIncome = Int64(round(incomes[i]))
+        print(io,", $thisIncome")
+    end
+    println(io,"")
+    for year=firstYear:lastYear
+        rates = getRate(year,status,incomes)
+        print(io,"$year")
+        for i=1:Nincomes
+            thisrate = round(rates[i]*100)/100
+            print(io,", $thisrate")
+        end
+        println(io,"")
+    end
+    close(io)
+end
