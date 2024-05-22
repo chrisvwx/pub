@@ -1,0 +1,173 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5897,        165]
+NotebookOptionsPosition[      5550,        151]
+NotebookOutlinePosition[      5943,        167]
+CellTagsIndexPosition[      5900,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "genSurface", " ", "expects", " ", "a", " ", "CSV", " ", "whose", " ", 
+     "rows", " ", "are", " ", "years"}], ",", " ", 
+    RowBox[{"columns", " ", "are", " ", "income", " ", "as", " ", 
+     RowBox[{"10", "^", "x"}], " ", "where", " ", "x", " ", "begins", " ", 
+     "at", " ", "3", " ", "and", " ", "rises", " ", "by", " ", "ticks", " ", 
+     "of", " ", "0.1"}], ",", " ", 
+    RowBox[{
+    "whose", " ", "first", " ", "row", " ", "and", " ", "column", " ", "are", 
+     " ", "labels", " ", "that", " ", "are", " ", "stripped"}]}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"genSurface", "[", "data_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"dim", ",", "ticksYear", ",", "ticksIncome", ",", "ticksRate"}],
+       "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"dim", "=", 
+       RowBox[{"Dimensions", "[", "data", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ticksYear", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Round", "[", "x", "]"}], ",", 
+             RowBox[{"Round", "[", 
+              RowBox[{"1861", "+", "x"}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "1", ",", 
+             RowBox[{"dim", "[", 
+              RowBox[{"[", "1", "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], ",", "10"}], "]"}], "\[Equal]",
+             "0"}], ")"}], "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ticksIncome", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Round", "[", "x", "]"}], ",", 
+             RowBox[{"\"\<$\>\"", "<>", 
+              RowBox[{"ToString", "[", 
+               RowBox[{"NumberForm", "[", 
+                RowBox[{
+                 RowBox[{"Round", "[", 
+                  SuperscriptBox["10", 
+                   RowBox[{"(", 
+                    FractionBox[
+                    RowBox[{"x", "+", "29"}], "10"], ")"}]], "]"}], ",", 
+                 RowBox[{"DigitBlock", "\[Rule]", "3"}]}], "]"}], "]"}]}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "1", ",", 
+             RowBox[{"dim", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", "10"}], "]"}], "\[Equal]",
+             "1"}], ")"}], "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ticksRate", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"TextString", "[", "x", "]"}], "<>", "\"\<%\>\""}]}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", "100", ",", "10"}], "}"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"DiscretePlot3D", "[", 
+       RowBox[{
+        RowBox[{"data", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", ",", "j"}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", 
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+        RowBox[{"AxesLabel", "\[Rule]", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"#", ",", 
+              RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "&"}], ",", 
+           
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<Year\>\"", ",", "\"\<Income\>\"", ",", "\"\<Rate\>\""}], 
+            "}"}]}], "]"}]}], ",", 
+        RowBox[{"ColorFunction", "\[Rule]", "\"\<SouthwestColors\>\""}], ",", 
+        
+        RowBox[{"Ticks", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"ticksYear", ",", "ticksIncome", ",", "ticksRate"}], 
+          "}"}]}], ",", 
+        RowBox[{"AxesEdge", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"Automatic", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", "Automatic"}], "}"}]}], ",", 
+        RowBox[{"ImageSize", "->", "Full"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellLabel->"In[43]:=",ExpressionUUID->"30d77eed-9448-484a-a294-36f40f92c596"]
+},
+WindowSize->{1066, 911},
+WindowMargins->{{60, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"17712fba-95d5-45d7-bc0a-0aa27fde8291"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4988, 129, 316, "Input",ExpressionUUID->"30d77eed-9448-484a-a294-36f40f92c596"]
+}
+]
+*)
+
