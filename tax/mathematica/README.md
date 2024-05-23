@@ -1,7 +1,7 @@
 # US Income Tax Surfaces
 
 The following are graphs of "surfaces" showing the full history of US income tax schedules
-for households "married, filing jointly". Dollars amounts are 2024 dollars, CPI adjusted.
+for households "married, filing jointly". Dollar amounts are 2024 dollars, CPI adjusted.
 Rates are effective tax rates before any deductions, credits, etc.
 
 For more information, please read [here](../README.md).
