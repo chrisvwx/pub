@@ -1,5 +1,8 @@
 # US Income tax plots
 
+**The plots, software, and Readme in this directory have been improved and made into the [package taxFoo](https://github.com/chrisvwx/taxFoo.jl). taxFoo is still not fancy and may still contain errors, but at least it's trying to be a proper Julia package. It also includes the standard deduction (which the data below does not include), and includes the beginnings of a comparison to results from Taxsim.jl.  Please refer to taxFoo in the future, as this Readme and other files in this directory will not be maintained.**
+<hr>
+
 Using data from [taxfoundation.org](https://taxfoundation.org/data/all/federal/historical-income-tax-rates-brackets/), 
 here are a few plots of US income taxes. These do not include the full tax treatment as
 [Taxsim](https://www.nber.org/research/data/taxsim) does; the plots below show solely the effective
