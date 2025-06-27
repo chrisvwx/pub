@@ -1,31 +1,5 @@
 # US Income tax plots
 
-**The plots, software, and Readme in this directory have been improved and made into the [package taxFoo](https://github.com/chrisvwx/taxFoo.jl). taxFoo is still not fancy and may still contain errors, but at least it's trying to be a proper Julia package. It also includes the standard deduction (which the data below does not include), and includes the beginnings of a comparison to results from Taxsim.jl.  Please refer to taxFoo in the future, as this Readme and other files in this directory will not be maintained.**
-<hr>
+For the data on US Income tax that was previously in this directory,
+see [taxFoo.jl](https://github.com/chrisvwx/taxFoo.jl).
 
-Using data from [taxfoundation.org](https://taxfoundation.org/data/all/federal/historical-income-tax-rates-brackets/), 
-here are a few plots of US income taxes. These do not include the full tax treatment as
-[Taxsim](https://www.nber.org/research/data/taxsim) does; the plots below show solely the effective
-income tax from the base tax brackets (e.g. without any sort of deductions).
-The first figure shows an animation of US income tax from 1862 to 2024,
-with all incomes converted into 2024 dollars using
-[CPI](https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-)
-data from the Minneapolis Fed. The income along the x-axis is shown in log scale. 
-
-There's lotsa history going on in this graph!
-
-![Animated tax brackts](animatedBrackets.gif)
-
-In the next figure (below) the tax for a few specific years (40-year increments from 1864 to 2024) is shown.
-We see the low tax in the 1860s, no income tax of 1904, the high wartime tax of 1944, 
-the tax in the middle of the Reagan years (before his final tax cuts), 
-and finally the rates for tax year 2024.
-
-![Forty-year increments](fortyYearIncrements.png)
-
-One interesting thing is the number of tax brackets. Originally there were only a small 
-number of brackets, but in 1918 through 1921 there were 56 income tax brackets.
-
-![Number of Brackets](numberOfBrackets.png)
-
-All the figures above assume a "Married filing Jointly" status.
